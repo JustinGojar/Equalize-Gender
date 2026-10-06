@@ -10,33 +10,115 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as InclusionRouteImport } from './routes/inclusion'
+import { Route as IssueRouteImport } from './routes/issue'
+import { Route as LawsRouteImport } from './routes/laws'
+import { Route as SourcesRouteImport } from './routes/sources'
+import { Route as StatisticsRouteImport } from './routes/statistics'
+import { Route as TakeActionRouteImport } from './routes/take-action'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const InclusionRoute = InclusionRouteImport.update({
+  id: '/inclusion',
+  path: '/inclusion',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IssueRoute = IssueRouteImport.update({
+  id: '/issue',
+  path: '/issue',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LawsRoute = LawsRouteImport.update({
+  id: '/laws',
+  path: '/laws',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SourcesRoute = SourcesRouteImport.update({
+  id: '/sources',
+  path: '/sources',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StatisticsRoute = StatisticsRouteImport.update({
+  id: '/statistics',
+  path: '/statistics',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TakeActionRoute = TakeActionRouteImport.update({
+  id: '/take-action',
+  path: '/take-action',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/inclusion': typeof InclusionRoute
+  '/issue': typeof IssueRoute
+  '/laws': typeof LawsRoute
+  '/sources': typeof SourcesRoute
+  '/statistics': typeof StatisticsRoute
+  '/take-action': typeof TakeActionRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/inclusion': typeof InclusionRoute
+  '/issue': typeof IssueRoute
+  '/laws': typeof LawsRoute
+  '/sources': typeof SourcesRoute
+  '/statistics': typeof StatisticsRoute
+  '/take-action': typeof TakeActionRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/inclusion': typeof InclusionRoute
+  '/issue': typeof IssueRoute
+  '/laws': typeof LawsRoute
+  '/sources': typeof SourcesRoute
+  '/statistics': typeof StatisticsRoute
+  '/take-action': typeof TakeActionRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/inclusion'
+    | '/issue'
+    | '/laws'
+    | '/sources'
+    | '/statistics'
+    | '/take-action'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/inclusion'
+    | '/issue'
+    | '/laws'
+    | '/sources'
+    | '/statistics'
+    | '/take-action'
+  id:
+    | '__root__'
+    | '/'
+    | '/inclusion'
+    | '/issue'
+    | '/laws'
+    | '/sources'
+    | '/statistics'
+    | '/take-action'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  InclusionRoute: typeof InclusionRoute
+  IssueRoute: typeof IssueRoute
+  LawsRoute: typeof LawsRoute
+  SourcesRoute: typeof SourcesRoute
+  StatisticsRoute: typeof StatisticsRoute
+  TakeActionRoute: typeof TakeActionRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +130,59 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/inclusion': {
+      id: '/inclusion'
+      path: '/inclusion'
+      fullPath: '/inclusion'
+      preLoaderRoute: typeof InclusionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/issue': {
+      id: '/issue'
+      path: '/issue'
+      fullPath: '/issue'
+      preLoaderRoute: typeof IssueRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/laws': {
+      id: '/laws'
+      path: '/laws'
+      fullPath: '/laws'
+      preLoaderRoute: typeof LawsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sources': {
+      id: '/sources'
+      path: '/sources'
+      fullPath: '/sources'
+      preLoaderRoute: typeof SourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/statistics': {
+      id: '/statistics'
+      path: '/statistics'
+      fullPath: '/statistics'
+      preLoaderRoute: typeof StatisticsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/take-action': {
+      id: '/take-action'
+      path: '/take-action'
+      fullPath: '/take-action'
+      preLoaderRoute: typeof TakeActionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  InclusionRoute: InclusionRoute,
+  IssueRoute: IssueRoute,
+  LawsRoute: LawsRoute,
+  SourcesRoute: SourcesRoute,
+  StatisticsRoute: StatisticsRoute,
+  TakeActionRoute: TakeActionRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
