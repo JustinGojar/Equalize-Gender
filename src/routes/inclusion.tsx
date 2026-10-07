@@ -32,7 +32,7 @@ export const Route = createFileRoute("/inclusion")({
 
 function LanguageSwapper() {
   const [i, setI] = useState(0);
-  const item = languageSwaps[i];
+  const item = languageSwaps[i]!;
   const go = (d: number) => setI((v) => (v + d + languageSwaps.length) % languageSwaps.length);
 
   return (
