@@ -11,7 +11,7 @@ export function MythOrFact() {
   const [answer, setAnswer] = useState<null | boolean>(null);
   const [done, setDone] = useState(false);
 
-  const item = quizItems[index];
+  const item = quizItems[index]!;
   const correct = answer !== null && answer === item.isMyth;
 
   const choose = (isMyth: boolean) => {

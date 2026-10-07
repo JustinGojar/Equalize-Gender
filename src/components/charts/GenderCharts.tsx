@@ -56,8 +56,8 @@ export default function GenderCharts() {
       legend: { display: false },
       tooltip: {
         callbacks: {
-          label: (ctx: { parsed: { y?: number }; raw: unknown }) =>
-            `${ctx.parsed.y ?? ctx.raw}% of ever-partnered women and girls aged 15+`,
+          label: (ctx: { raw: unknown }) =>
+            `${ctx.raw}% of ever-partnered women and girls aged 15+`,
         },
       },
     },
