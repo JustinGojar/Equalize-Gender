@@ -319,8 +319,7 @@ export const formsOfGbv: Form[] = [
     title: "Sexual violence",
     icon: "alert",
     definition: "Any sexual act or attempt carried out without a person's free and full consent.",
-    example:
-      "Pressuring someone into an unwanted sexual act by threatening to end a relationship.",
+    example: "Pressuring someone into an unwanted sexual act by threatening to end a relationship.",
     more: "Consent must be freely given. Philippine law treats sexual violence as a serious offence, and RA 9262 includes acts of a sexual nature within its definition of violence.",
   },
   {
@@ -428,6 +427,149 @@ export const quizItems: Quiz[] = [
     explanation:
       "A lower estimate in a later survey round is meaningful, but a single indicator does not prove the problem is solved or identify what caused the change.",
     sourceLabel: "PSA / NDHS, 2017 and 2022",
+  },
+  {
+    statement: "RA 9262 only protects married women.",
+    isMyth: true,
+    explanation:
+      "The law also covers violence by a former spouse, a current or former dating partner, or a person with whom the woman has a common child.",
+    sourceLabel: "Official Gazette, RA 9262",
+  },
+  {
+    statement: "Causing someone mental or emotional anguish can be a crime under RA 9262.",
+    isMyth: false,
+    explanation:
+      "Psychological violence — such as intimidation, harassment, public ridicule or repeated verbal abuse that causes mental or emotional anguish — is penalised under the law.",
+    sourceLabel: "Official Gazette, RA 9262",
+  },
+  {
+    statement:
+      "Controlling a partner's money or withholding financial support can be a form of abuse.",
+    isMyth: false,
+    explanation:
+      "RA 9262 recognises economic abuse, including withdrawing financial support, controlling the victim's own money, or preventing them from working.",
+    sourceLabel: "Official Gazette, RA 9262",
+  },
+  {
+    statement: "Only a court can issue a protection order.",
+    isMyth: true,
+    explanation:
+      "A Barangay Protection Order (BPO) can be issued by the Punong Barangay, in addition to the temporary and permanent protection orders issued by courts.",
+    sourceLabel: "Official Gazette, RA 9262",
+  },
+  {
+    statement:
+      "Violence against women by a partner is a private family matter the law cannot touch.",
+    isMyth: true,
+    explanation:
+      "RA 9262 treats violence against women and their children as a public crime, so a complaint can be filed by anyone with personal knowledge of the offence.",
+    sourceLabel: "Official Gazette, RA 9262",
+  },
+  {
+    statement: "Catcalling and wolf-whistling in the street are punishable in the Philippines.",
+    isMyth: false,
+    explanation:
+      "The Safe Spaces Act lists catcalling, wolf-whistling, unwanted invitations and persistent sexist or misogynistic remarks as gender-based street harassment.",
+    sourceLabel: "Official Gazette, RA 11313",
+  },
+  {
+    statement: "Harassment inside a jeepney, bus or other public transport is not covered by law.",
+    isMyth: true,
+    explanation:
+      "The Safe Spaces Act explicitly includes public utility vehicles among the public spaces where gender-based sexual harassment is penalised.",
+    sourceLabel: "Official Gazette, RA 11313",
+  },
+  {
+    statement: "Sharing someone's photos or videos online without their consent can be harassment.",
+    isMyth: false,
+    explanation:
+      "Gender-based online sexual harassment under the Safe Spaces Act includes uploading or sharing someone's photos, videos or information without consent.",
+    sourceLabel: "Official Gazette, RA 11313",
+  },
+  {
+    statement: "Sexist jokes in a group chat are harmless because they are just online.",
+    isMyth: true,
+    explanation:
+      "Misogynistic, homophobic and sexist remarks made online can be gender-based online sexual harassment under the Safe Spaces Act.",
+    sourceLabel: "Official Gazette, RA 11313",
+  },
+  {
+    statement: "Workplace harassment only counts when it comes from a boss.",
+    isMyth: true,
+    explanation:
+      "The Safe Spaces Act covers gender-based sexual harassment between peers and even from a subordinate to a superior, not only from someone in authority.",
+    sourceLabel: "Official Gazette, RA 11313",
+  },
+  {
+    statement: "Employers have a legal duty to prevent and act on gender-based harassment.",
+    isMyth: false,
+    explanation:
+      "Employers must disseminate the law, provide measures to prevent harassment, and create a committee to investigate complaints.",
+    sourceLabel: "Official Gazette, RA 11313",
+  },
+  {
+    statement: "Schools and universities must address gender-based harassment on campus.",
+    isMyth: false,
+    explanation:
+      "School heads are required to adopt and publicise anti-harassment policies and to act on complaints of gender-based sexual harassment.",
+    sourceLabel: "Official Gazette, RA 11313",
+  },
+  {
+    statement: "What a person wears can justify harassment.",
+    isMyth: true,
+    explanation:
+      "Responsibility lies with the person who harasses. Blaming someone's clothing shifts the blame and discourages people from reporting.",
+    sourceLabel: "UN Women",
+  },
+  {
+    statement: "In the Philippines, a marriage involving a person under 18 is prohibited.",
+    isMyth: false,
+    explanation:
+      "RA 11596 declares child marriage — where one or both parties are below 18 — unlawful and penalises those who facilitate or solemnise it.",
+    sourceLabel: "Official Gazette, RA 11596",
+  },
+  {
+    statement: "The child marriage law only protects girls.",
+    isMyth: true,
+    explanation:
+      "RA 11596 applies to any child below 18, regardless of sex, even though girls are disproportionately affected by child marriage.",
+    sourceLabel: "Official Gazette, RA 11596",
+  },
+  {
+    statement: "The Magna Carta of Women only applies to women working in government.",
+    isMyth: true,
+    explanation:
+      "RA 9710 protects the rights of all Filipino women, with particular attention to those in marginalised sectors.",
+    sourceLabel: "PCW / Official Gazette, RA 9710",
+  },
+  {
+    statement:
+      "Women employees can get special leave with full pay after surgery for gynecological disorders.",
+    isMyth: false,
+    explanation:
+      "The Magna Carta of Women grants a special leave of up to two months with full pay to qualified women employees after such surgery.",
+    sourceLabel: "PCW / Official Gazette, RA 9710",
+  },
+  {
+    statement: "Police stations have desks dedicated to cases involving women and children.",
+    isMyth: false,
+    explanation:
+      "The PNP maintains Women and Children Protection Desks in police stations nationwide to handle these cases.",
+    sourceLabel: "PNP — Women and Children Protection Center",
+  },
+  {
+    statement: "Unpaid care and domestic work is part of the global goal on gender equality.",
+    isMyth: false,
+    explanation:
+      "SDG target 5.4 calls for recognising and valuing unpaid care and domestic work and promoting shared responsibility within households.",
+    sourceLabel: "UN, SDG 5",
+  },
+  {
+    statement: "Gender stereotypes only limit women and girls.",
+    isMyth: true,
+    explanation:
+      "Stereotypes also restrict boys and men — for example, pressure not to show emotion or to avoid caregiving roles. Equality benefits everyone.",
+    sourceLabel: "UN, SDG 5",
   },
 ];
 
