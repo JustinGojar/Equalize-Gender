@@ -43,6 +43,15 @@ const TIERS = [
 
 const CONFETTI_COLORS = ["var(--violet)", "var(--coral)", "var(--cyan)", "var(--lavender)"];
 
+function shuffled<T>(items: readonly T[]): T[] {
+  const copy = [...items];
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j]!, copy[i]!];
+  }
+  return copy;
+}
+
 function useCountUp(target: number, duration = 1200) {
   const reduced = useReducedMotion();
   const [value, setValue] = useState(reduced ? target : 0);
@@ -244,8 +253,15 @@ export function MythOrFact() {
   const [bestStreak, setBestStreak] = useState(0);
   const [answer, setAnswer] = useState<null | boolean>(null);
   const [done, setDone] = useState(false);
+  // Start in source order so server and client render the same markup, then
+  // shuffle once mounted. Each restart draws a fresh order.
+  const [questions, setQuestions] = useState(quizItems);
 
-  const item = quizItems[index]!;
+  useEffect(() => {
+    setQuestions(shuffled(quizItems));
+  }, []);
+
+  const item = questions[index]!;
   const correct = answer !== null && answer === item.isMyth;
 
   const choose = (isMyth: boolean) => {
@@ -262,7 +278,7 @@ export function MythOrFact() {
   };
 
   const next = () => {
-    if (index + 1 >= quizItems.length) {
+    if (index + 1 >= questions.length) {
       setDone(true);
       return;
     }
@@ -271,6 +287,7 @@ export function MythOrFact() {
   };
 
   const restart = () => {
+    setQuestions(shuffled(quizItems));
     setIndex(0);
     setScore(0);
     setStreak(0);
@@ -279,7 +296,7 @@ export function MythOrFact() {
     setDone(false);
   };
 
-  const progress = ((index + (answer !== null ? 1 : 0)) / quizItems.length) * 100;
+  const progress = ((index + (answer !== null ? 1 : 0)) / questions.length) * 100;
 
   return (
     <GlassCard className="overflow-hidden p-6 sm:p-9">
@@ -301,7 +318,7 @@ export function MythOrFact() {
             ) : null}
           </AnimatePresence>
           <span>
-            {done ? "Finished" : `Question ${index + 1} of ${quizItems.length}`} · Score{" "}
+            {done ? "Finished" : `Question ${index + 1} of ${questions.length}`} · Score{" "}
             <motion.span
               key={score}
               initial={reduced || score === 0 ? false : { scale: 1.6, color: "var(--cyan)" }}
@@ -411,7 +428,7 @@ export function MythOrFact() {
                         onClick={next}
                         className="rounded-full bg-gradient-cta px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5 active:translate-y-0"
                       >
-                        {index + 1 >= quizItems.length ? "See my score" : "Next question"}
+                        {index + 1 >= questions.length ? "See my score" : "Next question"}
                       </button>
                     </div>
                   </motion.div>
