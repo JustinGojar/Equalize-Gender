@@ -1,26 +1,26 @@
-# Pixel Perfect Replica
+# EQUALIZE
 
-Implement exactly the screenshot and nothing else
+A gender awareness and inclusion platform focused on gender-based violence and harassment, built around official Philippine data and law.
 
-This project was built with [Lovable](https://lovable.dev).
+Built with [TanStack Start](https://tanstack.com/start), React, Vite and Tailwind CSS.
 
-**Live app**: https://equalize-gender.lovable.app
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/4df14578-70e7-44b7-962a-45db267de886).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+## Local development
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
+bun install
+bun run dev
 ```
+
+## Build
+
+```sh
+bun run build
+```
+
+The build uses Nitro's `vercel` preset and writes the [Vercel Build Output](https://vercel.com/docs/build-output-api/v3) to `.vercel/output`.
+
+## Deploy to Vercel
+
+1. Import this GitHub repository in the [Vercel dashboard](https://vercel.com/new).
+2. Keep the defaults — `vercel.json` already sets the install command (`bun install`) and build command (`bun run build`).
+3. Deploy. Every push to `main` triggers a new production deployment.
