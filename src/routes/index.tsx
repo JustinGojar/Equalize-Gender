@@ -74,19 +74,18 @@ function HeroVisual() {
         ].map(([a, b, c, d], i) => (
           <line key={i} x1={a} y1={b} x2={c} y2={d} stroke="currentColor" strokeWidth="1.2" />
         ))}
-        {([
-          [80, 120],
-          [320, 110],
-          [300, 310],
-          [100, 300],
-        ] as [number, number][]).map(([cx, cy], i) => (
+        {(
+          [
+            [80, 120],
+            [320, 110],
+            [300, 310],
+            [100, 300],
+          ] as [number, number][]
+        ).map(([cx, cy], i) => (
           <g key={i} className="text-foreground/80">
             <circle cx={cx} cy={cy} r="20" fill="currentColor" opacity="0.12" />
             <circle cx={cx} cy={cy - 5} r="6" fill="currentColor" />
-            <path
-              d={`M${cx - 10} ${cy + 12} q10 -14 20 0`}
-              fill="currentColor"
-            />
+            <path d={`M${cx - 10} ${cy + 12} q10 -14 20 0`} fill="currentColor" />
           </g>
         ))}
       </svg>
