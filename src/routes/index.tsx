@@ -10,7 +10,7 @@ import { SectionTitle } from "@/components/SectionTitle";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "EQUALIZE — Gender Awareness and Inclusion Platform" },
+      { title: "EQUALIZE" },
       {
         name: "description",
         content:
